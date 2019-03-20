@@ -1,6 +1,6 @@
 import glob
 import pandas as pd
-path = r'C:/file/path' # use your path
+path = r'C:/file/path' # use your path to folder containing your files
 all_files = glob.glob(path + "/*.xlsx")
 
 #dataframe array li
@@ -8,7 +8,7 @@ li = []
 
 for filename in all_files:
     df = pd.read_excel(filename, index_col=None, header=0)
-#     for troubleshooting file errors, can enable below    
+#     for troubleshooting file errors (ie. wrong sheet, missing headers) enable below    
 #     df['file'] = filename
 #     print(filename)
     li.append(df)
